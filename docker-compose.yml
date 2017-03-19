@@ -1,0 +1,15 @@
+version: "2"
+services:
+    web:
+        build:
+            context: .
+        volumes:
+            - .:/usr/src/myapp
+        links:
+            - rabbit
+    rabbit:
+        image: rabbitmq:3-management
+        ports:
+            - 15672
+        environment:
+            VIRTUAL_HOST: rabbit.bunny.docker

@@ -1,0 +1,12 @@
+{
+    "name": "emilycraps/bunny",
+    "require": {
+        "bunny/bunny": "^0.2.4"
+    },
+    "authors": [
+        {
+            "name": "emily",
+            "email": "emily@zimmo.be"
+        }
+    ]
+}
