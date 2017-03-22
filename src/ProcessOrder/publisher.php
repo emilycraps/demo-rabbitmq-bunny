@@ -8,6 +8,12 @@ $channel = $client->channel();
 
 $channel->exchangeDeclare('process_order', 'direct');
 
+$queue = $channel->queueDeclare('process_order_tomorrow');
+$channel->queueBind($queue->queue, 'process_order', 'delivery-tomorrow');
+
+$queue = $channel->queueDeclare('process_order_later');
+$channel->queueBind($queue->queue, 'process_order', 'delivery-later');
+
 $priorities = [
     'delivery-tomorrow',
     'delivery-later',

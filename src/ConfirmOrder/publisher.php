@@ -8,6 +8,9 @@ $channel = $client->channel();
 
 $channel->exchangeDeclare('send_confirmation_mail', 'direct');
 
+$queue = $channel->queueDeclare('send_confirmation_mail');
+$channel->queueBind($queue->queue, 'send_confirmation_mail');
+
 for ($i = 0; $i < 10; $i++) {
     $data = sprintf("Message %d", $i+1);
 

@@ -12,4 +12,5 @@ services:
         ports:
             - 15672
         environment:
-            VIRTUAL_HOST: rabbit.bunny.docker
+            - VIRTUAL_HOST=rabbit.bunny.docker
+            - VIRTUAL_PORT=15672

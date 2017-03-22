@@ -7,7 +7,7 @@ $client = (new \Bunny\Client(['host' => 'rabbit']))->connect();
 $channel = $client->channel();
 
 $channel->exchangeDeclare('process_order', 'direct');
-$queue = $channel->queueDeclare('process_order_later', false, false, true, false);
+$queue = $channel->queueDeclare('process_order_later');
 
 $channel->queueBind($queue->queue, 'process_order', 'delivery-later');
 
