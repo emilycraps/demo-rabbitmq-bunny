@@ -1,10 +1,10 @@
-#RabbitMQ demo using bunny
+# RabbitMQ demo using bunny
 
 **RabbitMQ** https://www.rabbitmq.com/
 
 **bunny** https://github.com/jakubkulhan/bunny
 
-##Setup
+## Setup
 
 `$ composer install`
 
@@ -15,7 +15,7 @@ This demo uses docker and docker-compose.
 
 You can access the RabbitMQ management plugin at http://rabbit.bunny.docker/. Default login is guest / guest.
 
-###Confirm Order example
+### Confirm Order example
 Demonstrates the most simple example: 1 exchange, 1 queue, 1 consumer.
 
 Publish 10 messages  
@@ -24,7 +24,7 @@ Publish 10 messages
 Start consumer  
 `$ docker-compose run --rm web php src/ConfirmOrder/consumer.php`
 
-###Process Order example
+### Process Order example
 Demonstrates routing keys
 
 Publish 10 messages  
@@ -34,7 +34,7 @@ Start consumers
 `$ docker-compose run --rm web php src/ProcessOrder/consumer-later.php`  
 `$ docker-compose run --rm web php src/ProcessOrder/consumer-tomorrow.php`
 
-###Dead Letter Exchange example
+### Dead Letter Exchange example
 Demonstrates how to route rejected messages to a dead letter exchange.
 
 Publish 10 messages  
